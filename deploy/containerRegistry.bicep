@@ -17,7 +17,7 @@ resource containerRegistry 'Microsoft.ContainerRegistry/registries@2021-12-01-pr
   name: containerRegistryName
   location: location
   sku: {
-    name: 'Standard'
+    name: 'Basic'
   }
 }
 

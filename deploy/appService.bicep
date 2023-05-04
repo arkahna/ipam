@@ -52,9 +52,9 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2021-02-01' = {
   name: appServicePlanName
   location: location
   sku: {
-    name: 'P1v3'
-    size: 'P1v3'
-    tier: 'PremiumV3'
+    name: 'B1'
+    size: 'B1'
+    tier: 'Basic'
     capacity: 1
   }
   kind: 'linux'
@@ -184,14 +184,6 @@ resource diagnosticSettingsApp 'Microsoft.Insights/diagnosticSettings@2021-05-01
   properties: {
     logs: [
       {
-        category: 'AppServiceAntivirusScanAuditLogs'
-        enabled: true
-        retentionPolicy: {
-          days: 0
-          enabled: false
-        }
-      }
-      {
         category: 'AppServiceHTTPLogs'
         enabled: true
         retentionPolicy: {
@@ -209,14 +201,6 @@ resource diagnosticSettingsApp 'Microsoft.Insights/diagnosticSettings@2021-05-01
       }
       {
         category: 'AppServiceAppLogs'
-        enabled: true
-        retentionPolicy: {
-          days: 0
-          enabled: false
-        }
-      }
-      {
-        category: 'AppServiceFileAuditLogs'
         enabled: true
         retentionPolicy: {
           days: 0
